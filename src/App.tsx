@@ -1,22 +1,18 @@
-import { useState } from 'react'
-import SearchBar from './components/SearchBar'
-import UserCount from './components/UserCount'
-import UserList from './components/UserList'
-import { usersData } from './data/users'
-import { useUserSearch } from './hooks/useUserSearch'
+import UserDirectory from './features/problem1/UserDirectory'
+import LiveCharacterCounter from './features/problem2/LiveCharacterCounter'
+import TemperatureConverter from './features/problem3/TemperatureConverter'
+import FocusTracker from './features/problem4/FocusTracker'
 import './App.css'
 
 function App() {
-  const [users] = useState(usersData)
-  const { searchTerm, setSearchTerm, filteredUsers } = useUserSearch(users)
-
   return (
     <main className="app">
       <div className="container">
-        <h1>User Directory</h1>
-        <SearchBar value={searchTerm} onChange={setSearchTerm} />
-        <UserCount count={filteredUsers.length} />
-        <UserList users={filteredUsers} />
+        <h1>React Hooks Practice</h1>
+        <UserDirectory />
+        <LiveCharacterCounter />
+        <TemperatureConverter />
+        <FocusTracker />
       </div>
     </main>
   )
